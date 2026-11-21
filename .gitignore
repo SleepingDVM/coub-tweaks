@@ -1,7 +1,14 @@
+# Служебные файлы
 *.zip
 *.crx
 *.pem
 *.log
+
+# ОС
 .DS_Store
 Thumbs.db
-node_modules/
+desktop.ini
+
+# Редакторы
+.vscode/
+.idea/
