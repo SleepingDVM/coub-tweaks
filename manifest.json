@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "Coub Tweaks",
+  "version": "1.1.9",
+  "minimum_chrome_version": "111",
+  "description": "Набор твиков для coub.com: чистый плеер, фикс вёрстки, громкость, скачивание. Каждую функцию можно включать отдельно.",
+  "permissions": ["storage"],
+  "host_permissions": ["*://*.coub.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Coub Tweaks",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.coub.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["*://*.coub.com/*"],
+      "js": ["page-script.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    }
+  ]
+}
